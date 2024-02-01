@@ -479,20 +479,7 @@ GROUP BY
 ORDER BY
 	maxprice DESC
 LIMIT 30;
---9.What is the difference in min nights by areas:
-SELECT
-	neighbourhood ,
-	room_type ,
-	minimum_nights,
-	count(minimum_nights)
-FROM
-	listingss l
-GROUP BY
-	1,
-	2,
-	3
-ORDER BY
-	count(minimum_nights) DESC;
+
 --10. which are the most popular neighbourhoods top 5 = Westminster, T Hamlets, Hackney, Camden, Kensington Chelsea
 SELECT
 	neighbourhood,
