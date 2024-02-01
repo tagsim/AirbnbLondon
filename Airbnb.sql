@@ -450,15 +450,7 @@ FROM
 ORDER BY
 	price DESC;
 --6. what can we learn from popular room type
-SELECT
-	room_type ,
-	count(room_type) AS countroomtype
-FROM
-	listingss l
-GROUP BY
-	room_type
-ORDER BY
-	countroomtype DESC;
+
 --7. busiest host,review   and why? Busiest in central London, private room or entire house which is preferred
 SELECT
 	host_id,
