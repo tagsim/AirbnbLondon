@@ -248,36 +248,27 @@ ORDER BY
 	availability_365 DESC;
 --average minimum night for all bookings as 5.9
 SELECT
-	avg(minimum_nights) AS minavg
+	ROUND(avg(minimum_nights),0) AS minavg,
+	min(minimum_nights) AS minmin,
+	max(minimum_nights) AS maxmin
 FROM
-	listingss l
-ORDER BY
-	minavg DESC;
+	listingss l;
 --avg minimum night by room type
 SELECT
 	room_type,
-	avg(minimum_nights) AS minavgnight
+	ROUND(avg(minimum_nights),0) AS minavgnight
 FROM
 	listingss l
 GROUP BY
 	room_type
 ORDER BY
 	minavgnight;
---availability average by neighbourhood desc
-SELECT
-	neighbourhood,
-	avg(availability_365) AS availab
-FROM
-	listingss l
-GROUP BY
-	neighbourhood
-ORDER BY
-	availab DESC;
+
 --availability between 10-365 days
 SELECT
 	host_id,
 	host_name,
-	availability_365
+	avg(availability_365)
 FROM
 	listingss l
 WHERE
